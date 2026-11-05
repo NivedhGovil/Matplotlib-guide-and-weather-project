@@ -21,7 +21,7 @@ Add:
  city = input("Enter a city name: ")
  ```
 
-Now, we acces the url of the city
+Now, we acces the url of the city. 
 ```
 
 city = input("Enter a city name: ")
