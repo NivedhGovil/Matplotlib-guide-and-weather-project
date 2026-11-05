@@ -1,7 +1,7 @@
 # Matplotlib Guide and Weather Visualization Project
 
 A beginner-friendly Matplotlib crash course organized into focused modules, followed by a weather-themed visualization project path.  
-If you are new to plotting in Python, this repository is designed to help you build confidence step by step.
+
 
 ## What You Will Learn
 
@@ -13,7 +13,7 @@ By working through this guide, you will practice how to:
 - Compare multiple data series in one figure
 - Build bar charts and scatter plots
 - Save figures and arrange subplot layouts
-- Combine these skills into a small weather data visualization workflow
+- Combine these skills into a small weather data visualization workflow. 
 
 ## Module Roadmap (1–7)
 
@@ -21,7 +21,7 @@ Each module includes an `example.py` script and a short local README with explan
 
 1. **Module 1: Basic Line Plot**  
    Path: [`1_Basic_Line_Plot/`](./1_Basic_Line_Plot)  
-   Focus: first line plot, plotting `x` vs `y`, and Matplotlib defaults.
+   Focus: first line plot, by plotting `x` vs `y`. 
 
 2. **Module 2: Markers, Line Styles, and Colors**  
    Path: [`2_Markers_Line_Styles/`](./2_Markers_Line_Styles)  
@@ -37,7 +37,7 @@ Each module includes an `example.py` script and a short local README with explan
 
 5. **Module 5: Bar Charts**  
    Path: [`5_Bar_Charts/`](./5_Bar_Charts)  
-   Focus: categorical comparison with `plt.bar(...)`, sizing, and color use.
+   Focus: categorical comparison with `plt.bar(...)`, chart sizing, and color variation use.
 
 6. **Module 6: Scatter Plots and Annotations**  
    Path: [`6_Scatter_Plots/`](./6_Scatter_Plots)  
@@ -49,24 +49,22 @@ Each module includes an `example.py` script and a short local README with explan
 
 ## Weather Visualization Project (How This Course Leads Into It)
 
-This repository’s original goal includes a weather visualization project after Modules 1–7.  
-In this clone, the core learning modules are present, and they map naturally to a weather workflow:
+This repository includes a weather visualization project after Modules 1–7.  
+
 
 1. Gather weather data (for example: date, temperature, humidity, rainfall, wind speed)
 2. Clean/organize values with NumPy or plain Python lists
 3. Use:
    - line plots for trends across time
-   - bar charts for category/month comparisons
-   - scatter plots for relationships (for example, humidity vs temperature)
 4. Add titles, labels, legends, and threshold lines to make plots interpretable
 5. Save polished figures for reports or presentations
 
-If you add a dedicated weather notebook/script, these modules provide the exact plotting foundation you need.
 
 ## Prerequisites
 
 - Python 3.9+ recommended
-- Basic Python syntax (variables, lists, functions)
+- Basic Python syntax (variables, lists, functions) 
+- Knowledge of pandas and requests. 
 - Familiarity with running Python scripts from a terminal
 
 
@@ -97,5 +95,5 @@ This project is licensed under the [MIT License](./LICENSE).
 ## Future Improvements
 
 - Connecting to Claude to make the outputs of this project emailed to your inbox. 
--
+
 
