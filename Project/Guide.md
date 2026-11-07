@@ -9,5 +9,7 @@ Uses:
 - Requests: To extract/parse data 
 - Matplotlib: To display the statistics. 
 
+**To insall these libraires, run ```pip install requirements.txt```**
+
 The project uses OpenMeteo's API, an open-source API for getting geographical weather data. 
 
