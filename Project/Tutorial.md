@@ -1,6 +1,6 @@
 # Tutorial
 
-1. Import requirements
+**1. Import requirements**
     We need 3 libraires: 
     - Pandas
     - Requests
@@ -13,7 +13,7 @@
  import matplotlib.pyplot as plt
  ```
 
-2. City name and Open Meteo fetching
+**2. City name and Open Meteo fetching**
 
 The code starts by asking the user, which city do they live in.
 Add: 
@@ -21,12 +21,30 @@ Add:
  city = input("Enter a city name: ")
  ```
 
-Now, we acces the url of the city. 
+Now, we access the url of the city, inputted by the user. 
 ```
+city = input("Enter a city name: ")
+```
+
+Now, we need to make a URL for Open-Meteo's geocoding API, inserting the city name so the API can look up its geographic coordinates. We do this with an f-string, a sort of function that replace the city entered into the URL. 
+```
+geo_url = f"https://geocoding-api.open-meteo.com/v1/search?name={city}&count=1"
+```
+```
+To get a request to the geocoding API and convert the resulting JSON data (weather data will be stored in JSON) into a Python dictionary, we need to add this: 
+geo_response = requests.get(geo_url).json()  
+```
+
+So now, our code is: 
+```
+import pandas as pd
+import requests
+import matplotlib.pyplot as plt
 
 city = input("Enter a city name: ")
 
-API
 geo_url = f"https://geocoding-api.open-meteo.com/v1/search?name={city}&count=1"
-geo_response = requests.get(geo_url).json()  
+geo_response = requests.get(geo_url).json()  # saves the data obtained from geo_url
 ```
+
+3. Creating the Edge case 
