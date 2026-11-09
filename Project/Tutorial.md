@@ -47,4 +47,12 @@ geo_url = f"https://geocoding-api.open-meteo.com/v1/search?name={city}&count=1"
 geo_response = requests.get(geo_url).json()  # saves the data obtained from geo_url
 ```
 
-3. Creating the Edge case 
+3. Creating the Edge case
+   If the city entered is not correct(typo or it doesn't exist) or if the cty entered could not fetch any data from the API, the program will crash if there is no value for ```geo_response```. So, we add an if statement that will check if the "result" was correctly fetched from the API.
+   We add: <br>
+   ```
+   if "results" not in geo_response:  
+    print(f"Couldn't find a city called '{city}'. Try a different spelling.")
+   ```
+
+   But, what if it entered a correct value? Our program will still crash as there is nothing to do if a corret value is reached!
