@@ -79,6 +79,7 @@ city = input("Enter a city name: ")
 
 geo_url = f"https://geocoding-api.open-meteo.com/v1/search?name={city}&count=1"
 geo_response = requests.get(geo_url).json()  # saves the data obtained from geo_url
+```
 
 
 if "results" not in geo_response: 
@@ -92,3 +93,18 @@ else:
 
     print(f" Found: {found_name}, {country} ({latitude}, {longitude})")
    ```
+
+4.
+```
+weather_url = (
+    f"https://api.open-meteo.com/v1/forecast?"
+    f"latitude={latitude}&longitude={longitude}"
+    f"&hourly=temperature_2m&past_days=7&timezone=auto"
+)
+response = requests.get(weather_url).json()  # Fetches the weather data as JSON.
+```
+ Builds the API request URL for Open-Meteo's forecast service using the retrieved coordinates. It asks for hourly temperatures (hourly=temperature_2m) covering the past 7 days (past_days=7) with local timezone adjustments, then fetches and parses the JSON response.
+5. Grab the list of hours and the list of temperatures
+
+hours = response['hourly']['time']  # Open response, then hourly, then time -> store as hours.
+temps = response['hourly']['temperature_2m']  # Same, but for temperature at 2 metres above ground.
