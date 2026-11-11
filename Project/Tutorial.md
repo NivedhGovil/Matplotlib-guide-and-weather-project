@@ -56,3 +56,39 @@ geo_response = requests.get(geo_url).json()  # saves the data obtained from geo_
    ```
 
    But, what if it entered a correct value? Our program will still crash as there is nothing to do if a corret value is reached!
+   so, we now add:
+   ```
+   else:
+        place = geo_response["results"][0]     # Open the box "Results" and grab the first item(Index 0)
+        latitude = place["latitude"]           # Pull out latitude from place
+        longitude = place["longitude"]    
+        found_name = place["name"]
+        country = place["country"]
+        print(f" Found: {found_name}, {country} ({latitude}, {longitude})")  # Prints the values obtained above.
+   ```
+   This makes us get the geographical location of the place
+
+   Our total code is now:
+   ```
+import requests 
+import requests
+import matplotlib.pyplot as plt
+
+city = input("Enter a city name: ")
+
+
+geo_url = f"https://geocoding-api.open-meteo.com/v1/search?name={city}&count=1"
+geo_response = requests.get(geo_url).json()  # saves the data obtained from geo_url
+
+
+if "results" not in geo_response: 
+    print(f"Couldn't find a city called '{city}'. Try a different spelling.")
+else:
+    place = geo_response["results"][0]     
+    latitude = place["latitude"]         
+    longitude = place["longitude"]
+    found_name = place["name"]
+    country = place["country"]
+
+    print(f" Found: {found_name}, {country} ({latitude}, {longitude})")
+   ```
